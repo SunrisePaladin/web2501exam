@@ -37,12 +37,12 @@ header{
 }
 
 .hd{
-    padding-top: 30px;
+    padding-top: 1rem;
     min-height:6.5rem;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     background-color: inherit;    
 }
 
@@ -64,6 +64,7 @@ header p{
 
 .logs{
     min-width:162px;
+    height:5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -102,7 +103,7 @@ header p{
 
 section{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     padding:5px;
@@ -111,7 +112,7 @@ section{
 }
 
 .s1{
-    height: 973px;
+    max-height: 973px;
     margin: 0px;
     padding: 5px;
     background-color: var(--back_clr);
@@ -137,11 +138,12 @@ h2{
 
 hr{
     /* width: 25vw; */
+    margin-bottom: 5px;
     width: 130px;
     height: 2px;
     border:none;
-    position: absolute;
-    left: 5%;
+    position: relative;
+    right: 35%;
     background: linear-gradient(45deg, var(--green_clr), var(--gray_clr));
 }
 
@@ -150,6 +152,8 @@ hr{
     flex-direction: column;
     min-width: 310px;
     justify-content: center;
+    overflow: hidden;
+    align-items: flex-start;
 }
 
 .smtng{
@@ -163,11 +167,12 @@ hr{
 
 .text2{
     color: white;
-    width:75vw;
+    width:auto;
 }
 
 .text2>p{
     margin-left: 10px;
+    max-width: 70vw;
 }
 
 .big_txt{
@@ -176,8 +181,96 @@ hr{
 }
 
 .btm_pic{
+    max-width: 332px;
+    max-height: 400px;
     position: relative;
     top: 30%;
-    overflow-y: hidden;
-    object-fit: contain;
+}
+
+.top_menu{
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 1280px) {
+    :root{
+        box-sizing: border-box;
+        font-size: 77.7%;
+    }
+    .s1{
+        flex-direction: row-reverse;
+    }
+    h2{
+        height: 60px;
+    }
+    .top_menu{
+        height: 4rem;
+        width: 60vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: visible;
+        gap: 3rem;
+    }
+    .hd{
+        min-width:1200px;
+    }
+    a>p{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        visibility: collapse;
+    }
+}
+
+button:focus{
+    border-radius: 1.5rem;
+    font-size: larger;
+}
+
+button:active{
+    background-color: red;
+}
+
+button:hover{
+    text-decoration:dashed;
+}
+
+::selection {
+    color: gold;
+    background: red;
+}
+
+button{
+    transition-duration: 250ms ;
+}
+
+a{
+    transition-duration: 250ms ;
+}
+
+a:link {
+    text-decoration: none;
+    color: yellow;
+}
+a:visited {
+    text-decoration: overline;
+    color: #fa36a0;
+}
+a:hover {
+    text-decoration: underline overline;
+}
+a:active {
+    background-color: DarkSalmon ;
 }
